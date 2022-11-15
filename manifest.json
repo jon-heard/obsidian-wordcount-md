@@ -1,7 +1,7 @@
 {
   "id": "obsidian-wordcount-md",
   "name": "Word Count - markdown oriented",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Counts the NON-MARKDOWN words of selected text in the editor.",
   "author": "Jonathan Heard",
   "authorUrl": "https://github.com/jon-heard",
