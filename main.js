@@ -51,11 +51,15 @@ class WordCountMd extends obsidian.Plugin
 		this.registerEditorExtension(cmStateField);
 	}
 
+	// word separators - space/tab, forward-slash, comma
+	static REGEX_SPACES = "\\s\\/,";
+	// word - 0 or more non-separators, an alphanumeric, 0 or more non-separators
+	static REGEX_WORDS = new RegExp(`[^${this.REGEX_SPACES}]*[a-zA-Z0-9][^${this.REGEX_SPACES}]*`, "g");
 	static updateStatusBar(text)
 	{
-		const words = text?.match(/[^\s/]*([a-zA-Z0-9])[^\s/]*/g)?.length || 0;
+		const words = text?.match(this.REGEX_WORDS)?.length || 0;
 		const chars = text.length;
-		WordCountMd.statusBar.setText(`${words} words ${chars} characters`);
+		this.statusBar.setText(`${words} words ${chars} characters`);
 	}
 }
 
