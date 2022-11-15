@@ -52,9 +52,9 @@ class WordCountMd extends obsidian.Plugin
 	}
 
 	// word separators - space/tab, forward-slash, comma
-	static REGEX_SPACES = "\\s\\/,";
+	static REGEX_SEPARATORS = "\\s\\/,";
 	// word - 0 or more non-separators, an alphanumeric, 0 or more non-separators
-	static REGEX_WORDS = new RegExp(`[^${this.REGEX_SPACES}]*[a-zA-Z0-9][^${this.REGEX_SPACES}]*`, "g");
+	static REGEX_WORDS = new RegExp(`[^${this.REGEX_SEPARATORS}]*[a-zA-Z0-9][^${this.REGEX_SEPARATORS}]*`, "g");
 
 	static updateStatusBar(text)
 	{
